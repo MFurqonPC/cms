@@ -32,7 +32,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, illum.</p>
             <b><i class="bi bi-person">Suparman, SPd.</i></b>
             <p><i class="bi bi-calendar-date">18 September 2022</i></p>
-            <a href="#">klik untuk selengkapnya</a>
+            <a href="index.php?page=artikel-show&id=<?= $data['id']?>"class="stretchet-link"></a>
         </div>
         <?php } ?>
     </div>

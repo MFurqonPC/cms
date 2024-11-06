@@ -13,6 +13,7 @@ switch($_GET['page']){
         include 'views/home.php';
         break;
     case 'artikel-show':
+        include 'controler/artikel_show.php';
         include 'views/artikel_show.php';
         break;    
 }

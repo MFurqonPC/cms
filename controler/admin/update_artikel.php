@@ -4,22 +4,30 @@ $id = $_POST['id'];
 $judul = $_POST['penulis'];
 $penulis = $_POST['judul'];
 $konten = $_POST['konten'];
+// input gambar barus
+$newgambar = $_FILES['gambar']['name'];
+$tmp = $_FILES['gambar']['tmp_name'];
 
+// mencari gambar lama
+$sql = 'SELECT * FROM artikel WHERE id = '.$id;
 $query = mysqli_query($connect, $sql);
-$result = mysqli_fetch_assoc($show);
+$result = mysqli_fetch_assoc($query);
+$oldimage = $result['gambar'];
+$newpath = $oldimage; //new path sama dengan gambar lama
 
-//periksa gambar ada file gambar baru yang di upload//
-if(isset($_FILES['gambar'])) {
-
-    //hapus gambar lama jika ada//
-    if (file_exists($result['gambar']));
+// jika ada gambat=r baru
+if($newgambar){
+    // hapus gambar lama
+    if(file_exists($oldimage)){
+        unlink($oldimage);
     }
-$gambar = $_FILES['gambar']['name'];
-$tmpname = $_FILES['gambar']['tmp_name'];
-$folder = $file . $gambar;
-
-
-$sql = "UPDATE artikel SET penulis = '$penulis', judul = '$judul', konten = '$konten' WHERE id= $id";
+    // pathnya diganti dengan path baru
+    $newpath = 'img/artikel/'.$newgambar;
+    // unggah gambar baru
+    move_uploaded_file($tmp, $newpath);
+}
+// query untuk update data ke dalam database
+$sql = "UPDATE artikel SET penulis = '$penulis', judul = '$judul', konten = '$konten', gambar = '$newpath' WHERE id= $id";
 $query = mysqli_query($connect, $sql);
 if (!$query) {
     echo "gagal update";

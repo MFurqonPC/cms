@@ -24,7 +24,7 @@
   </div>
   <div class="mb-3 " ows="4" cols="100">
             <label for="konten" rows="10" class="form-label" >konten</label>
-    <input type="teks" class="form-control" id="form-control" id="konten" name="konten">
+            <textarea name="konten" id="summernote"></textarea>
   </div>
   <div class="form-group">
     <label for="exampleFormControlFile1">Tambahkkan Gambar untuk artikelmu</label>

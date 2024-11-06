@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row text-center">
             <h1>Tambah Artikel</h1>
-<form action="?page=update-artikel" method="POST">
+<form action="?page=update-artikel" method="POST" enctype="multipart/form-data>
 <input type="hidden" name="id" value="<?= $data['id']?>">
         </div>
             <div class="mb-3">
@@ -27,6 +27,13 @@
             <label for="konten" class="form-label" >konten</label>
     <input type="teks" class="form-control" id="form-control" id="konten" name="konten" value="<?= $data['konten']?>">
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Tambahkkan Gambar untuk artikelmu</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="gambar">
+  </div>
+  <div class="col">
+    <img src="<?= $data['gambar']?>" alt="form-control">
+  </div>
   <div class="mb-3">
             <label for="tags" class="form-label">tanggal</label>
     <input type="date" class="form-control" id="form-control" id="tags" name="tanggal" value="<?= $data['tanggal']?>">
@@ -35,10 +42,6 @@
             <label for="tags" class="form-label">tags</label>
     <input type="teks" class="form-control" id="form-control" id="tags" name="tags" value="<?=$data['tags']?>">
   </div>
-  <!-- <div class="form-group">
-    <label for="exampleFormControlFile1">Tambahkkan Gambar untuk artielmu</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div> -->
   <div>
   <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
   </form>

@@ -2,20 +2,16 @@
         
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col">
-                <img src="https:dummyimage.com/800x600" alt="">
-                <p class="col p-3 text-secondary">Autor : M Furqon Putra Choir | 17 Oktober 2024</p>
-                <h2>Tentang saya</h2>
-                  <p>Sebagai seorang profesional yang berpengalaman di bidang teknologi informasi, saya memiliki keahlian yang luas dalam administrasi jaringan, pengembangan web, dan pemeliharaan komputer. Dengan latar belakang pendidikan dan pengalaman praktis, saya siap membantu perusahaan dalam mengoptimalkan infrastruktur IT dan menciptakan solusi digital yang efektif.
-                  </p>
-                  <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero unde dolorum itaque quam amet distinctio.</b>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate quibusdam nesciunt culpa quasi iure velit numquam repudiandae vel ex perspiciatis deserunt hic explicabo, iusto, excepturi nihil asperiores quas aut at minima corporis! Quae, eaque tempore?</p>
+                <img src="<?= $data['gambar']?>" alt="">
+                <p class="col p-3 text-secondary"><?= $data['penulis']?>|<?= $data['tanggal']?></p>
+                <h2><?= $data['judul']?></h2>
+                  <p><?=$data['konten']?></p>
         <div class="row row-cols row-cols-3">
             <div class="col-2">
                 <h5><Table>TAGS:</Table></h5>
             </div>
             <div class="col-6">
-                <b>Lorem, ipsum, dolor, sit amet, consectetur, adipisicing elit. Est, maxime
-                </b>
+                <b><?=$data['tags']?></b>
             </div>
             <div class="col-4 ">
             <i class="bi bi-facebook ms-2"></i>
@@ -24,7 +20,7 @@
             <i class="bi bi-messenger ms-2"></i>
             </div>
         </div>
-    </section>
+</section>
     <section class="container">
         <div class="row mt-4 container">
             <div class="col">
